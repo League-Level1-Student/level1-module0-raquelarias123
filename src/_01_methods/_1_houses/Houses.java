@@ -63,37 +63,41 @@ public class Houses {
 		
 	}
 	
+	public void drawFlatRoof() {
+		rob.turn(90);
+		rob.move(50);
+		rob.turn(90);
+	}
+	
+	public void drawPointedRoof() {
+		rob.turn(45);
+		rob.move(50);
+		rob.turn(90);
+		rob.move(50);
+		rob.turn(45);
+	}
 	public void drawHouse(String height, String color) {
 		int h=0;
-
+		rob.setPenColor(0,100,0);
 		rob.move(50);
 		rob.turn(-90);
 		if(height.equals("small")) {
 			h=60;
-			rob.move(h);
-			rob.turn(90);
-			rob.setPenColor(0,100,0);
-			rob.move(50);
 			rob.setPenColor(100,0,0);
-			rob.turn(90);
+			rob.move(h);
+			drawPointedRoof();
 			rob.move(h);
 		}else if(height.equals("medium")) {
 			h=100;
+			rob.setPenColor(0,0,100);
 			rob.move(h);
-			rob.turn(90);
-			rob.setPenColor(0,100,0);
-			rob.move(50);
-			rob.setPenColor(0,100,100);
-			rob.turn(90);
+			drawPointedRoof();
 			rob.move(h);
 		}else {
 			h=200;
+			rob.setPenColor(200,200,0);
 			rob.move(h);
-			rob.turn(90);
-			rob.setPenColor(0,100,0);
-			rob.move(50);
-			rob.setPenColor(0,0,100);
-			rob.turn(90);
+			drawFlatRoof();
 			rob.move(h);
 		}
 	
