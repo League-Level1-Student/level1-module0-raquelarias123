@@ -21,10 +21,10 @@ public class BodyPartQuiz {
 	// package,or if you prefer, get celebrity photos from the Internet,
 	// place them in the recipe package(body_part_quiz), and change the names below.
 
-	String firstImage = "src/_05_body_part_quiz/arnold.jpeg";
-	String secondImage = "src/_05_body_part_quiz/leonardo.jpeg";
-	String thirdImage = "src/_05_body_part_quiz/morgan.jpeg";
-	String fourthImage = "src/_05_body_part_quiz/jack.jpeg";
+	String firstImage = "src/_03_gui_with_help/_4_body_part_quiz/arnold.jpeg";
+	String secondImage = "src/_03_gui_with_help/_4_body_part_quiz/leonardo.jpeg";
+	String thirdImage = "src/_03_gui_with_help/_4_body_part_quiz/morgan.jpeg";
+	String fourthImage = "src/_03_gui_with_help/_4_body_part_quiz/jack.jpeg";
 
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
@@ -42,7 +42,7 @@ public class BodyPartQuiz {
 
 		// 3. Change the size of the window so that you can only see part of the
 		// image.
-		window.setSize(500, 500);
+		window.setSize(800, 800);
 
 		showNextImage();
 
@@ -51,14 +51,22 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
+		int score =0;
 
 		// 2. Set the size of the window in the initializeGui() method 
+		
 
 		// 4. Ask the user who this person is and store their answer
 		String guess = JOptionPane.showInputDialog("who is this?");
 
 		// 5. Check their answer. If they guessed correctly:
 		// -- Tell them they are right and increase the score by 1
+		if(guess.equals("Arnold")) {
+			JOptionPane.showMessageDialog(null, "You are right");
+			score++;
+		}else {
+			JOptionPane.showMessageDialog(null, "You are wrong. The person is Arnold");
+		}
 
 		// 6. Otherwise:
 		// -- Tell them they are wrong and who the person is
@@ -67,8 +75,34 @@ public class BodyPartQuiz {
 		showNextImage();
 
 		// 8. .... repeat 4-7 for all your images.....
+		if(guess.equals("Leonardo")) {
+			JOptionPane.showMessageDialog(null, "You are right");
+			score++;
+		}else {
+			JOptionPane.showMessageDialog(null, "You are wrong. The person is Leonardo");
+		}
+		showNextImage();
+		
+		
+		if(guess.equals("Morgan")) {
+			JOptionPane.showMessageDialog(null, "You are right");
+			score++;
+		}else {
+			JOptionPane.showMessageDialog(null, "You are wrong. The person is Morgan");
+		}
+		showNextImage();
+		
+		
+		if(guess.equals("jack")) {
+			JOptionPane.showMessageDialog(null, "You are right");
+			score++;
+		}else {
+			JOptionPane.showMessageDialog(null, "You are wrong. The person is jack");
+		}
+		showNextImage();
 
 		// 9. Show them their current score
+		JOptionPane.showMessageDialog(null, score);
 
 	}
 
